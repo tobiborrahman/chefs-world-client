@@ -18,7 +18,10 @@ const Navbar = () => {
 				</nav>
 			</div>
 			<div>
-				<h2>User</h2>
+				<button className="p-3 text-bold bg-orange-500">Log In</button>
+				<button className="p-3 text-bold bg-orange-500">
+					Register
+				</button>
 			</div>
 		</div>
 	);

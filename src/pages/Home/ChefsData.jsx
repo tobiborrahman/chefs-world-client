@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import SingleChef from './SingleChef';
 
 const ChefsData = () => {
 	const [chefs, setChefs] = useState([]);
@@ -6,9 +7,15 @@ const ChefsData = () => {
 	useEffect(() => {
 		fetch('http://localhost:5000/chefs')
 			.then((response) => response.json())
-			.then((data) => console.log(data));
+			.then((data) => setChefs(data));
 	}, []);
-	return <div></div>;
+	return (
+		<div className="grid grid-cols-3 mx-10 my-20 gap-3">
+			{chefs.map((chef) => (
+				<SingleChef key={chef.id} chef={chef}></SingleChef>
+			))}
+		</div>
+	);
 };
 
 export default ChefsData;
