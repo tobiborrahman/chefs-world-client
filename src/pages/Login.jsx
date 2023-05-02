@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
+	const { logInUser, handleGoogleSignIn } = useContext(AuthContext);
+	const [user, setUser] = useState(null);
+	const handleLogin = (event) => {
+		event.preventDefault();
+		const form = event.target;
+		const email = form.email.value;
+		const password = form.password.value;
+
+		console.log(email, password);
+		logInUser(email, password).then((signedUser) => {
+			const loggedUser = signedUser.user;
+			console.log(loggedUser);
+		});
+	};
+
+	const handleGooglePopUp = () => {
+		handleGoogleSignIn()
+			.then((result) => {
+				const popUp = result.user;
+				console.log(popUp);
+				setUser(popUp);
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
 	return (
 		<div className="hero h-[700px] bg-base-200">
 			<div className="hero-content w-full flex-col lg:flex-row-reverse">
@@ -10,15 +37,17 @@ const Login = () => {
 					<h1 className="text-black text-5xl text-center mt-5 font-semibold">
 						Login Now!
 					</h1>
-					<div className="card-body">
+					<form onSubmit={handleLogin} className="card-body">
 						<div className="form-control">
 							<label className="label">
 								<span className="label-text">Email</span>
 							</label>
 							<input
-								type="text"
+								type="email"
 								placeholder="email"
+								name="email"
 								className="input input-bordered"
+								required
 							/>
 						</div>
 						<div className="form-control">
@@ -26,9 +55,11 @@ const Login = () => {
 								<span className="label-text">Password</span>
 							</label>
 							<input
-								type="text"
+								type="password"
 								placeholder="password"
+								name="password"
 								className="input input-bordered"
+								required
 							/>
 							<label className="label">
 								<p href="#" className="label-text-alt ">
@@ -47,7 +78,10 @@ const Login = () => {
 						</div>
 						<p className="text-center">or</p>
 						<div className="form-control">
-							<button className="btn btn-outline btn-ghost">
+							<button
+								onClick={handleGooglePopUp}
+								className="btn btn-outline btn-ghost"
+							>
 								{' '}
 								<FaGoogle className="mr-3 text-2xl"></FaGoogle>{' '}
 								Sign In With Google
@@ -60,7 +94,7 @@ const Login = () => {
 								Sign In With Github
 							</button>
 						</div>
-					</div>
+					</form>
 				</div>
 			</div>
 		</div>
