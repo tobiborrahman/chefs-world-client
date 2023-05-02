@@ -21,7 +21,7 @@ const Banner = () => {
 						Lorem ipsum dolor sit, amet consectetur adipisicing
 						elit.
 					</p>
-					<button className="p-3 bg-orange-600 font-bold">
+					<button className="p-3 bg-orange-600 font-bold hover:bg-orange-700">
 						Order Now
 					</button>
 				</div>

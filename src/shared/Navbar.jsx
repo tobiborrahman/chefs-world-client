@@ -6,7 +6,7 @@ const Navbar = () => {
 		<div className="flex align-middle justify-between bg-gray-300 py-5 px-20">
 			<div>
 				<h2 className="text-2xl text-indigo-500">
-					Cuisine <span className="text-red-700">Hub</span>
+					Chefs <span className="text-red-700">World</span>
 				</h2>
 			</div>
 			<div>
@@ -18,9 +18,8 @@ const Navbar = () => {
 				</nav>
 			</div>
 			<div>
-				<button className="p-3 text-bold bg-orange-500">Log In</button>
-				<button className="p-3 text-bold bg-orange-500">
-					Register
+				<button className="btn btn-warning mr-6">
+					<Link to="/login">Log In</Link>
 				</button>
 			</div>
 		</div>
