@@ -38,10 +38,10 @@ const Navbar = () => {
 							// ></FaUserCircle>
 							// <img src={user?.photoUrl} alt="" />
 							<img
-								className="w-10 rounded-[50%] tooltip"
+								className="w-10 rounded-[50%] tooltip tooltip-open tooltip-top"
 								src={user?.photoURL}
 								alt=""
-								data-tip={user.displayName}
+								data-tip="hello"
 							/>
 						)}
 					</span>

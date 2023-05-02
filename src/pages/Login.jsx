@@ -1,11 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
-	const { logInUser, handleGoogleSignIn } = useContext(AuthContext);
-	const [user, setUser] = useState(null);
+	const { logInUser, handleGoogleSignIn, handleGithubLogin } =
+		useContext(AuthContext);
+
+	const navigate = useNavigate();
+	const location = useLocation();
+	const from = location?.state?.from?.pathname || '/';
+
 	const handleLogin = (event) => {
 		event.preventDefault();
 		const form = event.target;
@@ -16,6 +21,7 @@ const Login = () => {
 		logInUser(email, password).then((signedUser) => {
 			const loggedUser = signedUser.user;
 			console.log(loggedUser);
+			navigate(from, { replace: true });
 		});
 	};
 
@@ -25,6 +31,19 @@ const Login = () => {
 				const popUp = result.user;
 				console.log(popUp);
 				setUser(popUp);
+				navigate(from, { replace: true });
+			})
+			.catch((err) => {
+				console.log(err);
+			});
+	};
+
+	const handleGithubSignIn = () => {
+		handleGithubLogin()
+			.then((gitUser) => {
+				const githubUser = gitUser.user;
+				console.log(githubUser);
+				navigate(from, { replace: true });
 			})
 			.catch((err) => {
 				console.log(err);
@@ -88,7 +107,10 @@ const Login = () => {
 							</button>
 						</div>
 						<div className="form-control">
-							<button className="btn btn-outline btn-ghost">
+							<button
+								onClick={handleGithubSignIn}
+								className="btn btn-outline btn-ghost"
+							>
 								{' '}
 								<FaGithub className="mr-3 text-2xl"></FaGithub>{' '}
 								Sign In With Github
