@@ -1,18 +1,17 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './AuthProvider';
 
-import { Circles } from 'react-loader-spinner';
+import { Circles, Audio } from 'react-loader-spinner';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {
 	const { user, loading } = useContext(AuthContext);
 	const location = useLocation();
-	console.log(location);
+	// console.log(location);
 
 	if (loading) {
 		return (
-			<div>
-				<h1 className="text-5xl">Loading...</h1>
+			<div className="ml-[600px]  z-10">
 				<Circles
 					height="80"
 					width="80"

@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
@@ -9,6 +9,7 @@ const Login = () => {
 
 	const navigate = useNavigate();
 	const location = useLocation();
+	// console.log('page location', location);
 	const from = location?.state?.from?.pathname || '/';
 
 	const handleLogin = (event) => {
@@ -18,11 +19,13 @@ const Login = () => {
 		const password = form.password.value;
 
 		console.log(email, password);
-		logInUser(email, password).then((signedUser) => {
-			const loggedUser = signedUser.user;
-			console.log(loggedUser);
-			navigate(from, { replace: true });
-		});
+		logInUser(email, password)
+			.then((signedUser) => {
+				const loggedUser = signedUser.user;
+				console.log(loggedUser);
+				navigate(from, { replace: true });
+			})
+			.catch((err) => console.log(err));
 	};
 
 	const handleGooglePopUp = () => {
@@ -30,7 +33,6 @@ const Login = () => {
 			.then((result) => {
 				const popUp = result.user;
 				console.log(popUp);
-				setUser(popUp);
 				navigate(from, { replace: true });
 			})
 			.catch((err) => {

@@ -1,10 +1,11 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
-import { FaUserCircle } from 'react-icons/fa';
+import { Link, useLocation } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
+import './Navbar.css';
 
 const Navbar = () => {
 	const { user, logOut } = useContext(AuthContext);
+	const location = useLocation();
 
 	const handleLogOut = () => [
 		logOut()
@@ -19,24 +20,33 @@ const Navbar = () => {
 				</h2>
 			</div>
 			<div>
-				<nav>
-					<Link className="mr-4" to="/">
-						Home
-					</Link>
-					<Link to="/blog">Blog</Link>
+				<nav className="flex no-underline list-none pt-4">
+					<li className="mr-5">
+						<Link
+							className={
+								location.pathname === '/' ? 'active' : ''
+							}
+							to="/"
+						>
+							Home
+						</Link>
+					</li>
+					<li>
+						<Link
+							className={
+								location.pathname === '/blog' ? 'active' : ''
+							}
+							to="/blog"
+						>
+							Blog
+						</Link>
+					</li>
 				</nav>
 			</div>
 			<div className="flex">
 				<p className="flex pt-3 mr-3">
 					<span className="mr-3">
 						{user && (
-							// <FaUserCircle
-							// 	style={{
-							// 		fontSize: '2rem',
-							// 		marginTop: '2.5px',
-							// 	}}
-							// ></FaUserCircle>
-							// <img src={user?.photoUrl} alt="" />
 							<img
 								className="w-10 rounded-[50%] tooltip tooltip-open tooltip-top"
 								src={user?.photoURL}
