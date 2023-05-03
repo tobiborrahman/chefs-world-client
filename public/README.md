@@ -1,0 +1,5 @@
+-   This is a website of best chefs of the world.
+-   Here you can find them and their special recipes.
+-   They are the most experienced chefs in the world.
+-   You can add your favorite recipe to your favorite list.
+-
