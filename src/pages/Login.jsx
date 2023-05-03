@@ -23,6 +23,7 @@ const Login = () => {
 			.then((signedUser) => {
 				const loggedUser = signedUser.user;
 				console.log(loggedUser);
+				form.reset('');
 				navigate(from, { replace: true });
 			})
 			.catch((err) => console.log(err));
