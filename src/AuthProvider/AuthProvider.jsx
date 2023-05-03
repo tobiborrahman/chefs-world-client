@@ -8,6 +8,7 @@ import {
 	signInWithEmailAndPassword,
 	signInWithPopup,
 	signOut,
+	updateProfile,
 } from 'firebase/auth';
 import app from '../firebase/firebase.config';
 
@@ -46,6 +47,14 @@ const AuthProvider = ({ children }) => {
 		return signOut(auth);
 	};
 
+	const userNameUrl = () => {
+		return updateProfile(auth.currentUser, {
+			displayName: 'Tobibor Rahman',
+			photoURL:
+				'https://lh3.googleusercontent.com/a/AGNmyxZgyL3PS2oCamfX0u4pCT6mz3TBGaBaUZbUFxaF=s96-c',
+		});
+	};
+
 	useEffect(() => {
 		const unsubscribe = onAuthStateChanged(auth, (loggedUser) => {
 			setUser(loggedUser);
@@ -62,6 +71,7 @@ const AuthProvider = ({ children }) => {
 		logOut,
 		createUser,
 		logInUser,
+		userNameUrl,
 		handleGoogleSignIn,
 		handleGithubLogin,
 	};

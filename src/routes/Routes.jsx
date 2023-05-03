@@ -6,7 +6,7 @@ import Banner from '../pages/Home/Banner';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';
-import Recipe from '../pages/Home/Recipe';
+import Recipe from '../pages/Recipes/Recipe';
 import Blog from '../pages/Blog/Blog';
 import PrivateRoute from '../AuthProvider/PrivateRoute';
 
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
 				element: <Register></Register>,
 			},
 			{
-				path: '/recipe',
+				path: '/recipe/:id',
 				element: (
 					<PrivateRoute>
 						<Recipe></Recipe>

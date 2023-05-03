@@ -13,7 +13,7 @@ const Navbar = () => {
 			.catch((err) => console.log(err)),
 	];
 	return (
-		<div className="flex align-middle justify-between bg-gray-300 py-5 px-20">
+		<div className=" flex align-middle justify-between bg-gray-300 py-5 px-20">
 			<div>
 				<h2 className="text-2xl text-indigo-500">
 					Chefs <span className="text-red-700">World</span>
@@ -45,13 +45,15 @@ const Navbar = () => {
 			</div>
 			<div className="flex">
 				<p className="flex pt-3 mr-3">
-					<span className="mr-3">
+					<span
+						className="mr-3 tooltip tooltip-top"
+						data-tip={user?.displayName}
+					>
 						{user && (
 							<img
-								className="w-10 rounded-[50%] tooltip tooltip-open tooltip-top"
+								className="w-10 rounded-[50%] "
 								src={user?.photoURL}
 								alt=""
-								data-tip="hello"
 							/>
 						)}
 					</span>

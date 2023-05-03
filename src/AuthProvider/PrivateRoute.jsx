@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { AuthContext } from './AuthProvider';
 
-import { Circles, Audio } from 'react-loader-spinner';
+import { Circles } from 'react-loader-spinner';
 import { Navigate, useLocation } from 'react-router-dom';
 
 const PrivateRoute = ({ children }) => {

@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
-	const { createUser } = useContext(AuthContext);
-	const [error, setError] = useState();
+	const { createUser, userNameUrl, logOut } = useContext(AuthContext);
+	// const [error, setError] = useState()
+	const navigate = useNavigate();
 
 	const handleRegister = (event) => {
 		event.preventDefault();
@@ -16,17 +17,20 @@ const Register = () => {
 
 		console.log(name, photoUrl, email, password);
 
-		if (password < 6) {
-			setError('Password must be');
-		}
+		// if (password < 6) {
+		// 	setError('Password must be');
+		// }
 
-		console.log(error);
+		// console.log(error);
 
 		createUser(email, password)
 			.then((createdUser) => {
 				const newUser = createdUser.user;
 				console.log(newUser);
 				form.reset('');
+				userNameUrl();
+				logOut();
+				navigate('/login');
 			})
 			.catch((err) => {
 				console.log(err);
@@ -96,9 +100,7 @@ const Register = () => {
 									</Link>
 								</p>
 							</label>
-							<p className="text-1xl text-red-700">
-								Error: {error}
-							</p>
+							<p className="text-1xl text-red-700">Error:</p>
 						</div>
 						<div className="form-control mt-6">
 							<button className="btn btn-primary">
