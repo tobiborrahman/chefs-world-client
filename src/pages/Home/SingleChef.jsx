@@ -12,13 +12,13 @@ const SingleChef = ({ chef }) => {
 		likes,
 	} = chef;
 	return (
-		<div className="card card-compact w-96 bg-base-100 shadow-xl">
-			<figure>
+		<div className="card card-compact w-96 bg-[#151920] overflow-hidden shadow-xl">
+			<figure className="hover:scale-110 duration-500">
 				<LazyLoad height={250} offset={300}>
-					<img src={chefPicture} alt="Shoes" />
+					<img src={chefPicture} />
 				</LazyLoad>
 			</figure>
-			<div className="card-body">
+			<div className="card-body text-white mt-5">
 				<h2 className="card-title">{chefName}</h2>
 				<p>Years Of Experience: {yearsOfExperience}</p>
 				<p>Number of Recipes: {numberOfRecipes}</p>

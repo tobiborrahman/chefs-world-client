@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Register = () => {
 	const { createUser, userNameUrl, logOut } = useContext(AuthContext);
-	// const [error, setError] = useState()
+	const [error, setError] = useState('');
 	const navigate = useNavigate();
 
 	const handleRegister = (event) => {
@@ -17,11 +17,11 @@ const Register = () => {
 
 		console.log(name, photoUrl, email, password);
 
-		// if (password < 6) {
-		// 	setError('Password must be');
-		// }
-
-		// console.log(error);
+		if (password.length < 6) {
+			setError('Password must be at least 6 characters');
+		} else {
+			setError('');
+		}
 
 		createUser(email, password)
 			.then((createdUser) => {
@@ -100,7 +100,9 @@ const Register = () => {
 									</Link>
 								</p>
 							</label>
-							<p className="text-1xl text-red-700">Error:</p>
+							{error && (
+								<p className="text-1xl text-red-700">{error}</p>
+							)}
 						</div>
 						<div className="form-control mt-6">
 							<button className="btn btn-primary">

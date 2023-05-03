@@ -13,15 +13,16 @@ const Navbar = () => {
 			.catch((err) => console.log(err)),
 	];
 	return (
-		<div className=" flex align-middle justify-between bg-gray-300 py-5 px-20">
-			<div>
-				<h2 className="text-2xl text-indigo-500">
-					Chefs <span className="text-red-700">World</span>
+		<div className="flex align-middle justify-between bg-[#0E1317] py-7 px-10">
+			<div className="pt-1">
+				<h2 className="text-4xl text-indigo-500 font-bold">
+					Chefs
+					<span className="text-orange-600 font-bold">World</span>
 				</h2>
 			</div>
 			<div>
-				<nav className="flex no-underline list-none pt-4">
-					<li className="mr-5">
+				<nav className="flex no-underline list-none pt-2">
+					<li className="mr-5 text-2xl text-orange-600">
 						<Link
 							className={
 								location.pathname === '/' ? 'active' : ''
@@ -31,7 +32,7 @@ const Navbar = () => {
 							Home
 						</Link>
 					</li>
-					<li>
+					<li className="text-2xl text-orange-600 ">
 						<Link
 							className={
 								location.pathname === '/blog' ? 'active' : ''
@@ -44,14 +45,14 @@ const Navbar = () => {
 				</nav>
 			</div>
 			<div className="flex">
-				<p className="flex pt-3 mr-3">
+				<p className="flex mr-3">
 					<span
-						className="mr-3 tooltip tooltip-top"
+						className="mr-3 tooltip tooltip-left"
 						data-tip={user?.displayName}
 					>
 						{user && (
 							<img
-								className="w-10 rounded-[50%] "
+								className="w-10 rounded-[50%] pt-1"
 								src={user?.photoURL}
 								alt=""
 							/>
@@ -60,12 +61,12 @@ const Navbar = () => {
 					{user ? (
 						<button
 							onClick={handleLogOut}
-							className="btn btn-warning mr-6"
+							className=" py-1 px-7 text-1xl font-bold bg-orange-600 mr-6"
 						>
 							<Link to="/login">Log Out</Link>
 						</button>
 					) : (
-						<button className="btn btn-warning mr-6">
+						<button className="py-1 px-7 text-1xl font-bold bg-orange-600 mr-6">
 							<Link to="/login">Log In</Link>
 						</button>
 					)}

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle, FaGithub } from 'react-icons/fa';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
@@ -6,6 +6,8 @@ import { AuthContext } from '../AuthProvider/AuthProvider';
 const Login = () => {
 	const { logInUser, handleGoogleSignIn, handleGithubLogin } =
 		useContext(AuthContext);
+
+    const [error, setError] = useState('')
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -17,6 +19,7 @@ const Login = () => {
 		const form = event.target;
 		const email = form.email.value;
 		const password = form.password.value;
+
 
 		console.log(email, password);
 		logInUser(email, password)
