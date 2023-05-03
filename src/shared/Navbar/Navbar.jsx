@@ -13,7 +13,7 @@ const Navbar = () => {
 			.catch((err) => console.log(err)),
 	];
 	return (
-		<div className="flex align-middle justify-between bg-[#0E1317] py-7 px-10">
+		<div className=" sm:text-center md:flex align-middle justify-between bg-[#0E1317] py-7 px-10">
 			<div className="pt-1">
 				<h2 className="text-4xl text-indigo-500 font-bold">
 					Chefs
@@ -21,8 +21,8 @@ const Navbar = () => {
 				</h2>
 			</div>
 			<div>
-				<nav className="flex no-underline list-none pt-2">
-					<li className="mr-5 text-2xl text-orange-600">
+				<nav className="md:flex no-underline list-none pt-2">
+					<li className="md:mr-5 text-2xl text-orange-600">
 						<Link
 							className={
 								location.pathname === '/' ? 'active' : ''
@@ -44,10 +44,10 @@ const Navbar = () => {
 					</li>
 				</nav>
 			</div>
-			<div className="flex">
-				<p className="flex mr-3">
+			<div className="sm:pl-7 md:flex">
+				<p className=" mr-3">
 					<span
-						className="mr-3 tooltip tooltip-left"
+						className="mr-3 tooltip tooltip-top"
 						data-tip={user?.displayName}
 					>
 						{user && (
@@ -58,15 +58,17 @@ const Navbar = () => {
 							/>
 						)}
 					</span>
+				</p>
+				<p>
 					{user ? (
 						<button
 							onClick={handleLogOut}
-							className=" py-1 px-7 text-1xl font-bold bg-orange-600 mr-6"
+							className="py-3 px-7 text-1xl font-bold bg-orange-600 mr-6"
 						>
 							<Link to="/login">Log Out</Link>
 						</button>
 					) : (
-						<button className="py-1 px-7 text-1xl font-bold bg-orange-600 mr-6">
+						<button className="py-3 px-7 text-1xl font-bold bg-orange-600 mr-6">
 							<Link to="/login">Log In</Link>
 						</button>
 					)}

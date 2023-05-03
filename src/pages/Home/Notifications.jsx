@@ -27,7 +27,7 @@ const Notifications = () => {
 					<input
 						type="text"
 						placeholder="Your Email Address"
-						className="rounded-l-full py-2 pl-2 w-[500px] bg-gray-200 text-orange-600"
+						className="rounded-l-full py-2 pl-2 md:w-[500px] bg-gray-200 text-orange-600"
 					/>
 					<button className="bg-orange-600 w-40 rounded-l-full rounded-r-full -ml-10 py-2 text-white px-2">
 						Subscribe

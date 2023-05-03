@@ -11,8 +11,8 @@ const PopularCategories = () => {
 				Everything You Want to Know
 			</h3>
 
-			<div className="flex align-middle justify-between mx-20 mt-20">
-				<div className="w-80">
+			<div className="md:flex align-middle justify-between mx-20 mt-20">
+				<div className="md:w-80">
 					<img src="../../../public/img_3.jpg" alt="" />
 					<h4 className="text-2xl text-white uppercase mt-8">
 						Fresh Taste
@@ -23,7 +23,7 @@ const PopularCategories = () => {
 						aliquam placeat nesciunt magnam.
 					</p>
 				</div>
-				<div className="w-80">
+				<div className="md:w-80">
 					<img src="../../../public/img_4.jpg" alt="" />
 					<h4 className="text-2xl text-white uppercase mt-8">
 						Made With Love
@@ -34,7 +34,7 @@ const PopularCategories = () => {
 						aliquam placeat nesciunt magnam.
 					</p>
 				</div>
-				<div className="w-80">
+				<div className="md:w-80">
 					<img src="../../../public/img_5.jpg" alt="" />
 					<h4 className="text-2xl text-white uppercase mt-8">
 						test the difference
