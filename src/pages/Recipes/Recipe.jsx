@@ -10,12 +10,12 @@ const Recipe = () => {
 	console.log(recipes);
 
 	return (
-		<div className="py-14 bg-orange-50">
+		<div className="py-14 bg-[#151920]">
 			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure className="w-[650px]">
+				<figure className="md:w-[650px]">
 					<img src={chefPicture} alt="Album" />
 				</figure>
-				<div className="mt-32 mx-auto">
+				<div className="md:mt-32 mx-auto">
 					<h2 className="text-2xl font-bold">{chefName}</h2>
 					<h4 className="text-1xl text-gray-400 font-semibold">
 						<span className="text-black font-bold">
@@ -43,7 +43,12 @@ const Recipe = () => {
 					</h4>
 				</div>
 			</div>
-			<div className="grid grid-cols-3 gap-3 mx-10 py-10">
+			<div>
+				<h1 className="text-5xl text-center text-white font-bold my-10">
+					Famous Recipes of {chefName}
+				</h1>
+			</div>
+			<div className="md:grid grid-cols-3 gap-3 mx-10 py-10">
 				{recipes.recipes.map((recipe) => (
 					<SingleRecipe
 						key={recipe.id}

@@ -1,11 +1,10 @@
 import React from 'react';
-// import img_1 from '../../../public/img_1.jpg';
 
 const Banner = () => {
 	return (
 		<div
 			style={{
-				backgroundImage: `url('../../../public/food-5.jpg')`,
+				backgroundImage: `url('https://i.ibb.co/34fzQCd/food-5.jpg')`,
 				backgroundSize: 'cover',
 				backgroundPosition: 'center',
 				height: '710px',
@@ -18,7 +17,7 @@ const Banner = () => {
 						Eating Experience
 					</h1>
 
-					<button className="py-3 px-5 mt-4 bg-orange-600 font-bold hover:bg-orange-700">
+					<button className="py-3 px-5 mt-4 text-white bg-orange-600 font-bold hover:bg-orange-700 duration-300">
 						View Full Menu
 					</button>
 				</div>

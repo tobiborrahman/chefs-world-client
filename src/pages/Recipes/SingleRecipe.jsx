@@ -4,7 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const SingleRecipe = ({ recipe }) => {
 	const [disable, setDisable] = useState(false);
-	const { name, description, likes, rating } = recipe;
+	const { recipe_name, ingredients, cooking_method, rating } = recipe;
 
 	const notify = () => toast('Add to your favorite list!');
 
@@ -15,17 +15,34 @@ const SingleRecipe = ({ recipe }) => {
 
 	return (
 		<div>
-			<div className="card w-96 h-[300px] bg-base-100 shadow-xl">
-				<div className="card-body">
-					<h2 className="card-title">{name}</h2>
-					<p>{description}</p>
-					<p>{likes}</p>
-					<p>{rating}</p>
-					<div className="card-actions justify-end">
+			<div className="card md:w-96  bg-[#191d24] text-white shadow-xl">
+				<div className="card-body h-[500px]">
+					<h2 className="card-title">{recipe_name}</h2>
+					<p>
+						<span className="text-orange-600 font-bold">
+							Ingredients:
+						</span>
+						{ingredients.map((ingredient) => (
+							<> {ingredient},</>
+						))}
+					</p>
+					<p>
+						<span className="text-orange-600 font-bold">
+							Cooking Method:{' '}
+						</span>{' '}
+						{cooking_method}
+					</p>
+					<p>
+						<span className="text-orange-600 font-bold">
+							Rating:
+						</span>{' '}
+						{rating}
+					</p>
+					<div className="card-actions">
 						<button
 							onClick={disableBtn}
 							disabled={disable}
-							className="btn btn-primary"
+							className="btn"
 						>
 							Add to Favorite
 						</button>

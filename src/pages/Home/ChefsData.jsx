@@ -5,7 +5,7 @@ const ChefsData = () => {
 	const [chefs, setChefs] = useState([]);
 
 	useEffect(() => {
-		fetch('http://localhost:5000/chefs')
+		fetch('https://chef-recipe-hunter-server-tobibur2021.vercel.app/chefs')
 			.then((response) => response.json())
 			.then((data) => setChefs(data));
 	}, []);

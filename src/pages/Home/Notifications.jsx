@@ -29,7 +29,7 @@ const Notifications = () => {
 						placeholder="Your Email Address"
 						className="rounded-l-full py-2 pl-2 md:w-[500px] bg-gray-200 text-orange-600"
 					/>
-					<button className="bg-orange-600 w-40 rounded-l-full rounded-r-full -ml-10 py-2 text-white px-2">
+					<button className="bg-orange-600 hover:bg-orange-700 duration-300 w-40 rounded-l-full rounded-r-full -ml-10 py-2 text-white px-2">
 						Subscribe
 					</button>
 				</div>

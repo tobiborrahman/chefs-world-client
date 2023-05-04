@@ -37,28 +37,16 @@ const Footer = () => {
 							Follow Us
 						</h4>
 						<div className="flex">
-							<a
-								href="#"
-								className="mr-4 text-3xl text-gray-400 hover:text-white"
-							>
+							<a className="mr-4 text-3xl text-gray-400 hover:text-white">
 								<FaFacebook />
 							</a>
-							<a
-								href="#"
-								className="mr-4 text-3xl text-gray-400 hover:text-white"
-							>
+							<a className="mr-4 text-3xl text-gray-400 hover:text-white">
 								<FaInstagram />
 							</a>
-							<a
-								href="#"
-								className="mr-4 text-3xl text-gray-400 hover:text-white"
-							>
+							<a className="mr-4 text-3xl text-gray-400 hover:text-white">
 								<FaTwitter />
 							</a>
-							<a
-								href="#"
-								className="mr-4 text-3xl text-gray-400 hover:text-white"
-							>
+							<a className="mr-4 text-3xl text-gray-400 hover:text-white">
 								<FaYoutube text-3xl />
 							</a>
 						</div>

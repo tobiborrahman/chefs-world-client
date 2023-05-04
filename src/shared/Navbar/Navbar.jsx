@@ -15,7 +15,7 @@ const Navbar = () => {
 	return (
 		<div className=" sm:text-center md:flex align-middle justify-between bg-[#0E1317] py-7 px-10">
 			<div className="pt-1">
-				<h2 className="text-4xl text-indigo-500 font-bold">
+				<h2 className="text-4xl text-white font-bold">
 					Chefs
 					<span className="text-orange-600 font-bold">World</span>
 				</h2>
@@ -63,12 +63,12 @@ const Navbar = () => {
 					{user ? (
 						<button
 							onClick={handleLogOut}
-							className="py-3 px-7 text-1xl font-bold bg-orange-600 mr-6"
+							className="py-3 px-7 text-1xl text-white font-bold bg-orange-600 mr-6 hover:bg-orange-700 duration-300"
 						>
 							<Link to="/login">Log Out</Link>
 						</button>
 					) : (
-						<button className="py-3 px-7 text-1xl font-bold bg-orange-600 mr-6">
+						<button className="py-3 px-7 text-1xl font-bold hover:bg-orange-700 bg-orange-600 duration-300 mr-6">
 							<Link to="/login">Log In</Link>
 						</button>
 					)}

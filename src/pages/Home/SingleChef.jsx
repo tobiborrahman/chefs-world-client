@@ -12,7 +12,7 @@ const SingleChef = ({ chef }) => {
 		likes,
 	} = chef;
 	return (
-		<div className="sm:mt-20 card card-compact md:w-96 bg-[#151920] shadow-xl">
+		<div className="card card-compact md:w-96 bg-[#151920] shadow-xl">
 			<figure className="overflow-hidden">
 				<div className="hover:scale-125 duration-1000">
 					<LazyLoad height={250} offset={300}>
@@ -27,7 +27,7 @@ const SingleChef = ({ chef }) => {
 				<p> Likes {likes}</p>
 				{/* <Recipe recipes={recipes}></Recipe> */}
 				<div className="card-actions justify-center">
-					<button className="py-3 mt-3 px-7 text-1xl text-black font-bold bg-orange-600">
+					<button className="py-3 mt-3 px-7 text-1xl text-white font-bold bg-orange-600 hover:bg-orange-700 duration-300">
 						<Link to={`/recipe/${id}`}>View Recipes</Link>
 					</button>
 				</div>

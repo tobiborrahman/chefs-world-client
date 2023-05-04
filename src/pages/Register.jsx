@@ -37,9 +37,9 @@ const Register = () => {
 			});
 	};
 	return (
-		<div className="hero h-[700px] bg-base-200">
+		<div className="hero h-[800px] bg-[#191d24] py-20">
 			<div className="hero-content flex-col w-full lg:flex-row-reverse">
-				<div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+				<div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-300">
 					<h1 className="text-black text-5xl text-center mt-5 font-semibold">
 						Register Now!
 					</h1>

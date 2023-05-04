@@ -7,7 +7,7 @@ const Login = () => {
 	const { logInUser, handleGoogleSignIn, handleGithubLogin } =
 		useContext(AuthContext);
 
-    const [error, setError] = useState('')
+	const [error, setError] = useState('');
 
 	const navigate = useNavigate();
 	const location = useLocation();
@@ -19,7 +19,6 @@ const Login = () => {
 		const form = event.target;
 		const email = form.email.value;
 		const password = form.password.value;
-
 
 		console.log(email, password);
 		logInUser(email, password)
@@ -56,9 +55,9 @@ const Login = () => {
 			});
 	};
 	return (
-		<div className="hero h-[700px] bg-base-200">
+		<div className="hero h-[700px] bg-[#191d24]">
 			<div className="hero-content w-full flex-col lg:flex-row-reverse">
-				<div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+				<div className="card flex-shrink-0 w-full bg-base-300 max-w-sm shadow-2xl ">
 					<h1 className="text-black text-5xl text-center mt-5 font-semibold">
 						Login Now!
 					</h1>
