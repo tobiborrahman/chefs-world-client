@@ -12,7 +12,7 @@ const Banner = () => {
 		>
 			<div className="flex align-middle justify-center text-center pt-56">
 				<div>
-					<h1 className="text-7xl text-white  font-mono font-bold ">
+					<h1 className="md:text-7xl text-white  font-mono font-bold ">
 						Enjoy Delicious & Wonderful <br />
 						Eating Experience
 					</h1>

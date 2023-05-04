@@ -1,15 +1,20 @@
 import React from 'react';
-import { useRouteError } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const ErrorPage = () => {
-	const error = useRouteError();
+	const navigate = useNavigate();
+	const handleNavigate = () => {
+		navigate('/');
+	};
 	return (
-		<div>
+		<div className="relative">
 			<img src="https://i.ibb.co/TgP4DpF/error-image.webp" alt="" />
-			{/* <h2>This is error page</h2>
-			<h1 className="text-center text-7xl text-red-600">
-				<i>{error.statusText || error.message}</i>
-			</h1> */}
+			<button
+				onClick={handleNavigate}
+				className="absolute top-[68%] z-10 text-white font-bold left-[43%] bg-orange-600 hover:bg-orange-800 duration-300 py-3 px-7"
+			>
+				Go to Homepage
+			</button>
 		</div>
 	);
 };

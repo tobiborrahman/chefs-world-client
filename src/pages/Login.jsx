@@ -11,7 +11,6 @@ const Login = () => {
 
 	const navigate = useNavigate();
 	const location = useLocation();
-	// console.log('page location', location);
 	const from = location?.state?.from?.pathname || '/';
 
 	const handleLogin = (event) => {
@@ -20,7 +19,6 @@ const Login = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 
-		console.log(email, password);
 		logInUser(email, password)
 			.then((signedUser) => {
 				const loggedUser = signedUser.user;
@@ -28,14 +26,16 @@ const Login = () => {
 				form.reset('');
 				navigate(from, { replace: true });
 			})
-			.catch((err) => console.log(err));
+			.catch((err) => {
+				setError(err);
+				console.log(err);
+			});
 	};
 
 	const handleGooglePopUp = () => {
 		handleGoogleSignIn()
 			.then((result) => {
 				const popUp = result.user;
-				console.log(popUp);
 				navigate(from, { replace: true });
 			})
 			.catch((err) => {
@@ -47,7 +47,6 @@ const Login = () => {
 		handleGithubLogin()
 			.then((gitUser) => {
 				const githubUser = gitUser.user;
-				console.log(githubUser);
 				navigate(from, { replace: true });
 			})
 			.catch((err) => {
@@ -97,6 +96,7 @@ const Login = () => {
 								</p>
 							</label>
 						</div>
+						<p className="text-red-600">Error: </p>
 						<div className="form-control mt-6">
 							<button className="btn btn-primary"> Login</button>
 						</div>

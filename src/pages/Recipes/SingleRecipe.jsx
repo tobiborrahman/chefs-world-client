@@ -16,7 +16,7 @@ const SingleRecipe = ({ recipe }) => {
 	return (
 		<div>
 			<div className="card md:w-96  bg-[#191d24] text-white shadow-xl">
-				<div className="card-body h-[500px]">
+				<div className="card-body md:h-[500px]">
 					<h2 className="card-title">{recipe_name}</h2>
 					<p>
 						<span className="text-orange-600 font-bold">
