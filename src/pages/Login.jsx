@@ -103,7 +103,7 @@ const Login = () => {
 							</label>
 						</div>
 
-						<div className="form-control mt-6">
+						<div className="form-control mt-3">
 							<button className="btn btn-primary"> Login</button>
 						</div>
 						<p className="text-red-600">{error}</p>
