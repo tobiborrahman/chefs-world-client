@@ -321,7 +321,7 @@ const Blog = () => {
 						loading ? (
 							'Loading document...'
 						) : (
-							<button className="py-3 px-7 ml-[550px] text-1xl text-white font-bold hover:bg-orange-700 bg-orange-600 duration-300 mr-6">
+							<button className="py-3 px-7 ml-[540px] absolute -mt-16  text-1xl text-white font-bold hover:bg-orange-700 bg-orange-600 duration-300 mr-6">
 								Download PDF!
 							</button>
 						)
