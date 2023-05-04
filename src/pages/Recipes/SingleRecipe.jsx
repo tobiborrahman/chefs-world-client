@@ -4,7 +4,8 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const SingleRecipe = ({ recipe }) => {
 	const [disable, setDisable] = useState(false);
-	const { recipe_name, ingredients, cooking_method, rating } = recipe;
+	const { recipe_name, description, ingredients, cooking_method, rating } =
+		recipe;
 
 	const notify = () => toast('Add to your favorite list!');
 

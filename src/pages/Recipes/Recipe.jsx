@@ -4,10 +4,14 @@ import SingleRecipe from './SingleRecipe';
 const Recipe = () => {
 	// const { id } = useParams();
 	const recipes = useLoaderData();
-	const { chefName, chefPicture, likes, numberOfRecipes, yearsOfExperience } =
-		recipes;
-
-	console.log(recipes);
+	const {
+		chefName,
+		description,
+		chefPicture,
+		likes,
+		numberOfRecipes,
+		yearsOfExperience,
+	} = recipes;
 
 	return (
 		<div className="py-14 bg-[#151920]">
@@ -15,15 +19,13 @@ const Recipe = () => {
 				<figure className="md:w-[650px]">
 					<img src={chefPicture} alt="Album" />
 				</figure>
-				<div className="md:mt-32 mx-auto">
+				<div className="md:mt-28 ml-10">
 					<h2 className="text-2xl font-bold">{chefName}</h2>
 					<h4 className="text-1xl text-gray-400 font-semibold">
 						<span className="text-black font-bold">
 							Description:{' '}
 						</span>
-						Lorem ipsum dolor sit, amet consectetur elit.
-						Consectetur eaque <br />
-						perspiciatis, dolorem beatae asperiores{' '}
+						{description}
 					</h4>
 					<h4 className="text-1xl text-gray-400 font-semibold">
 						<span className="text-black font-bold">Likes:</span>{' '}
