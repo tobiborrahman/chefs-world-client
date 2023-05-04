@@ -19,6 +19,8 @@ const Login = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 
+		
+
 		logInUser(email, password)
 			.then((signedUser) => {
 				const loggedUser = signedUser.user;
@@ -27,7 +29,7 @@ const Login = () => {
 				navigate(from, { replace: true });
 			})
 			.catch((err) => {
-				setError(err);
+				setError(err.message);
 				console.log(err);
 			});
 	};
@@ -96,10 +98,11 @@ const Login = () => {
 								</p>
 							</label>
 						</div>
-						<p className="text-red-600">Error: </p>
+
 						<div className="form-control mt-6">
 							<button className="btn btn-primary"> Login</button>
 						</div>
+						<p className="text-red-600">{error}</p>
 						<p className="text-center">or</p>
 						<div className="form-control">
 							<button

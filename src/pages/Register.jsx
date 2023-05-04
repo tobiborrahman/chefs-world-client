@@ -18,9 +18,14 @@ const Register = () => {
 		console.log(name, photoUrl, email, password);
 
 		if (password.length < 6) {
-			setError('Password must be at least 6 characters');
-		} else {
-			setError('');
+			setError('Password must be at least six characters');
+			return;
+		} else if (!password) {
+			setError('Password did not match');
+			return;
+		} else if (!email) {
+			setError('Email did not match');
+			return;
 		}
 
 		createUser(email, password)
@@ -33,7 +38,8 @@ const Register = () => {
 				navigate('/login');
 			})
 			.catch((err) => {
-				console.log(err);
+				setError(err.message);
+				// console.log(err);
 			});
 	};
 	return (
