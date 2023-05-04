@@ -19,7 +19,12 @@ const Login = () => {
 		const email = form.email.value;
 		const password = form.password.value;
 
-		
+		if (password.length < 6) {
+			setError('Password must be at least 6 characters');
+			return;
+		} else {
+			setError('');
+		}
 
 		logInUser(email, password)
 			.then((signedUser) => {
@@ -30,7 +35,6 @@ const Login = () => {
 			})
 			.catch((err) => {
 				setError(err.message);
-				console.log(err);
 			});
 	};
 
