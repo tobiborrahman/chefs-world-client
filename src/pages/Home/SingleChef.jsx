@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import LazyLoad from 'react-lazy-load';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
 
 const SingleChef = ({ chef }) => {
 	const {
@@ -16,9 +16,7 @@ const SingleChef = ({ chef }) => {
 			<div className="card card-compact md:w-96 bg-[#151920] shadow-xl">
 				<figure className="overflow-hidden">
 					<div className="hover:scale-125 duration-1000">
-						<LazyLoad height={250}>
-							<img src={chefPicture} />
-						</LazyLoad>
+						<LazyLoadImage src={chefPicture}></LazyLoadImage>
 					</div>
 				</figure>
 				<div className="card-body text-white md:mt-5">

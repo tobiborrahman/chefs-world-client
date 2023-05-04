@@ -16,7 +16,7 @@ const Recipe = () => {
 	return (
 		<div className="py-14 bg-[#151920]">
 			<div className="card lg:card-side bg-base-100 shadow-xl">
-				<figure className="md:w-[650px]">
+				<figure className="md:w-[50%] lg:w-[50%]">
 					<img src={chefPicture} alt="Album" />
 				</figure>
 				<div className="md:mt-28 ml-10">
