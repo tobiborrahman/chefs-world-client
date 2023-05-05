@@ -13,7 +13,7 @@ const Navbar = () => {
 			.catch((err) => console.log(err)),
 	];
 	return (
-		<div className=" sm:text-center md:flex align-middle justify-between bg-[#0E1317] py-7 px-10">
+		<div className="text-center md:flex align-middle justify-between bg-[#0E1317] py-7 px-10">
 			<div className="pt-1">
 				<h2 className="text-4xl text-white font-bold">
 					Chefs

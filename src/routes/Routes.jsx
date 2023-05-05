@@ -2,7 +2,6 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Main from '../Main/Main';
 import ErrorPage from '../ErrorPage/ErrorPage';
-import Banner from '../pages/Home/Banner';
 import Home from '../pages/Home/Home';
 import Login from '../pages/Login';
 import Register from '../pages/Register';

@@ -19,7 +19,7 @@ const Recipe = () => {
 				<figure className="md:w-[50%] lg:w-[50%]">
 					<img src={chefPicture} alt="Album" />
 				</figure>
-				<div className="md:mt-28 ml-10">
+				<div className="m-5 md:m-0 md:mt-[88px] md:ml-10">
 					<h2 className="text-2xl font-bold">{chefName}</h2>
 					<h4 className="text-1xl text-gray-400 font-semibold">
 						<span className="text-black font-bold">
@@ -46,7 +46,7 @@ const Recipe = () => {
 				</div>
 			</div>
 			<div>
-				<h1 className="text-5xl text-center text-white font-bold my-10">
+				<h1 className="text-5xl text-center text-white font-bold mt-10">
 					Famous Recipes of {chefName}
 				</h1>
 			</div>

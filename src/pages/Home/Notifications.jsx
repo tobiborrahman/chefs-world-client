@@ -1,5 +1,5 @@
 import React from 'react';
-import img_2 from '../../../public/img_2.jpg';
+import img_2 from '/img_2.jpg';
 
 const Notifications = () => {
 	return (
