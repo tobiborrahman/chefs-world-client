@@ -11,7 +11,7 @@ const ChefsData = () => {
 	}, []);
 	return (
 		<div>
-			<h1 className="bg-[#0E1317] text-center pt-20 md:text-7xl text-white font-bold">
+			<h1 className="bg-[#0E1317] text-center pt-20 text-2xl md:text-7xl text-white font-bold">
 				The Best Chefs of US
 			</h1>
 			<div className=" md:grid grid-cols-3 px-10 py-24 bg-[#0E1317] gap-3">

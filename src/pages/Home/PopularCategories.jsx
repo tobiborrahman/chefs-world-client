@@ -6,11 +6,11 @@ import img_5 from '/img_5.jpg';
 const PopularCategories = () => {
 	return (
 		<div className="py-32 bg-[#151920]">
-			<h1 className="text-5xl text-center text-white uppercase">
+			<h1 className="text-2xl md:text-5xl text-center text-white uppercase">
 				Who we are
 			</h1>
 			<hr className="mx-auto text-orange-900 w-10 border-2 border-orange-400 font-bold mt-6 mb-4" />
-			<h3 className="text-5xl text-white font-mono text-center italic">
+			<h3 className="text-2xl md:text-5xl text-white font-mono text-center italic">
 				Everything You Want to Know
 			</h3>
 
