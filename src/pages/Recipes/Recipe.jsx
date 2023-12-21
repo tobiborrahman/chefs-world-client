@@ -20,14 +20,14 @@ const Recipe = () => {
 					<img src={chefPicture} alt="Album" />
 				</figure>
 				<div className="m-5 md:m-0 md:mt-[88px] md:ml-10">
-					<h2 className="text-2xl font-bold">{chefName}</h2>
-					<h4 className="text-1xl text-gray-400 font-semibold">
+					<h2 className="text-2xl font-bold py-3">{chefName}</h2>
+					<h4 className="text-1xl text-gray-400 md:w-[550px] font-semibold">
 						<span className="text-black font-bold">
 							Description:{' '}
 						</span>
 						{description}
 					</h4>
-					<h4 className="text-1xl text-gray-400 font-semibold">
+					<h4 className="text-1xl text-gray-400 font-semibold py-3">
 						<span className="text-black font-bold">Likes:</span>{' '}
 						{likes}
 					</h4>
@@ -37,7 +37,7 @@ const Recipe = () => {
 						</span>{' '}
 						{numberOfRecipes}
 					</h4>
-					<h4 className="text-1xl text-gray-400 font-semibold">
+					<h4 className="text-1xl text-gray-400 font-semibold pt-3">
 						<span className="text-black font-bold">
 							Years of Experience:
 						</span>{' '}
