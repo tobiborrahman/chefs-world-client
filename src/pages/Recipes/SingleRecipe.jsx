@@ -17,7 +17,7 @@ const SingleRecipe = ({ recipe }) => {
 	return (
 		<div>
 			<div className="mt-5 md:mt-0 card md:w-96  bg-[#191d24] text-white shadow-xl">
-				<div className="card-body md:h-[500px]">
+				<div className="card-body md:h-[500px] text-justify">
 					<h2 className="card-title">{recipe_name}</h2>
 					<p>
 						<span className="text-orange-600 font-bold">
