@@ -5,10 +5,10 @@ const Blog = () => {
 	const componentRef = useRef();
 	return (
 		<>
-			<div>
+			<div className="bg-[#151920] py-10">
 				<div ref={componentRef}>
-					<div className="bg-[#151920] py-20">
-						<div className="mx-10 border border-orange-600 p-10 rounded-lg">
+					<div>
+						<div className="border border-orange-600 p-3 mx-3 md:mx-10 text-justify md:p-10 rounded-lg my-3 md:my-10">
 							<h3 className="text-2xl font-semibold text-orange-600">
 								Tell us the differences between uncontrolled and
 								controlled components.
@@ -51,7 +51,7 @@ const Blog = () => {
 								input in real-time.
 							</p>
 						</div>
-						<div className="mx-10 border border-orange-600 p-10 rounded-lg my-10">
+						<div className=" border border-orange-600 p-3 mx-3 md:mx-10 text-justify md:p-10 rounded-lg my-3 md:my-10">
 							<h3 className="text-2xl font-semibold text-orange-600">
 								How to validate React props using PropTypes
 							</h3>
@@ -76,7 +76,7 @@ const Blog = () => {
 								to validate prop types.
 							</p>
 						</div>
-						<div className="mx-10 border border-orange-600 p-10 rounded-lg my-10">
+						<div className="border border-orange-600 p-3 mx-3 md:mx-10 text-justify md:p-10 rounded-lg my-3 md:my-10">
 							<h3 className="text-2xl font-semibold text-orange-600">
 								The difference between nodejs and express js.
 							</h3>
@@ -100,7 +100,7 @@ const Blog = () => {
 								responses, routing, middleware, and templating.
 							</p>
 						</div>
-						<div className="mx-10 border border-orange-600 p-10 rounded-lg my-10">
+						<div className=" border border-orange-600 p-3 mx-3 md:mx-10 text-justify md:p-10 rounded-lg my-3 md:my-10">
 							<h3 className="text-2xl font-semibold text-orange-600">
 								What is a custom hook, and why will you create a
 								custom hook?
@@ -321,9 +321,11 @@ const Blog = () => {
 						loading ? (
 							'Loading document...'
 						) : (
-							<button className="py-3 px-7 ml-14 md:ml-[540px] absolute -mt-16  text-1xl text-white font-bold hover:bg-orange-700 bg-orange-600 duration-300 mr-6">
-								Download PDF!
-							</button>
+							<div className="flex justify-center items-center pt-7 md:pt-0">
+								<button className="py-3 px-7 text-1xl text-white font-bold hover:bg-orange-700 bg-orange-600 duration-300 mr-6">
+									Download PDF!
+								</button>
+							</div>
 						)
 					}
 				</PDFDownloadLink>

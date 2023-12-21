@@ -15,7 +15,7 @@ const Recipe = () => {
 
 	return (
 		<div className="py-14 bg-[#151920]">
-			<div className="card lg:card-side bg-base-100 shadow-xl">
+			<div className="card lg:card-side bg-base-100 mx-3 shadow-xl">
 				<figure className="md:w-[50%] lg:w-[50%]">
 					<img src={chefPicture} alt="Album" />
 				</figure>
@@ -46,11 +46,12 @@ const Recipe = () => {
 				</div>
 			</div>
 			<div>
-				<h1 className="text-5xl text-center text-white font-bold mt-10">
+				<h1 className="text-4xl md:text-5xl text-center text-white font-bold mt-10">
 					Famous Recipes of {chefName}
 				</h1>
 			</div>
-			<div className="md:grid grid-cols-3 gap-3 mx-10 py-10">
+
+			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 mx-3 md:mx-10 py-10">
 				{recipes.recipes.map((recipe) => (
 					<SingleRecipe
 						key={recipe.id}
