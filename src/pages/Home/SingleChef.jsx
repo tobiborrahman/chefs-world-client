@@ -13,7 +13,7 @@ const SingleChef = ({ chef }) => {
 	} = chef;
 	return (
 		<>
-			<div className="mb-5 md:mb-1 card card-compact md:w-96 bg-[#151920] shadow-xl">
+			<div className="mb-5 md:mb-1 card card-compact w-full md:w-96 bg-[#151920] shadow-xl">
 				<figure className="overflow-hidden">
 					<div className="hover:scale-125 duration-1000">
 						<LazyLoadImage src={chefPicture}></LazyLoadImage>
