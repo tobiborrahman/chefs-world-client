@@ -2,7 +2,6 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import SingleRecipe from './SingleRecipe';
 
 const Recipe = () => {
-	// const { id } = useParams();
 	const recipes = useLoaderData();
 	const {
 		chefName,
